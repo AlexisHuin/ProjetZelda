@@ -211,11 +211,11 @@ const jeuxZelda = [
 // setArray();
 
 function search() {
-  let startButton = document.querySelector(".search-button");
+  const startButton = document.querySelector(".search-button");
   startButton.addEventListener("click", () => {
     let buttonValue = document.querySelector("input");
     let searchValue = buttonValue.value;
-    let table = document.querySelector(".target-array");
+    const table = document.querySelector(".target-array");
 
     while (table.rows.length > 0) {
       table.deleteRow(0);
@@ -251,8 +251,8 @@ function search() {
 
 search();
 
-function resetButton() {
-  let resetButton = document.querySelector(".reset-button");
+(function resetButton() {
+  const resetButton = document.querySelector(".reset-button");
   resetButton.addEventListener("click", () => {
     let table = document.querySelector(".target-array");
 
@@ -260,6 +260,7 @@ function resetButton() {
       table.deleteRow(0);
     }
   });
-}
+  /* ma fonction s'auto excecute avec le () */
+}) ();
 
-resetButton();
+
