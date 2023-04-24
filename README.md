@@ -1,5 +1,6 @@
 # ProjetZelda
-Projet Perso sur l'univers Zelda, Work in progress
+Work in progress
+
 
 REQUIS:
 Node.js
