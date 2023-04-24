@@ -13,6 +13,11 @@ app.get("/profil", function (req, res) {
   res.sendFile(__dirname + "/public/profil.html");
 });
 
+// Définir la route de la page de d'inscription
+app.get("/register", function (req, res) {
+  res.sendFile(__dirname + "/public/register.html");
+});
+
 // lien 404
 app.use(function(req, res, next) {
   res.status(404).sendFile(__dirname + "/public/404.html")
