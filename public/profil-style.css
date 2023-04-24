@@ -1,13 +1,12 @@
 .left-bann {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
 img {
-    width: 20%;
+  width: 20%;
 }
 
 .footer-link {
-text-align: center;
+  text-align: center;
 }

@@ -2,73 +2,21 @@ body {
   background-color: grey;
 }
 
-.img-404 {
-  width: 50%;
-}
-
-.user{
+.banner {
   display: flex;
-  flex-direction: column;
-}
-
-.flash {
-  animation: flashlight 0.5s infinite;
-  padding:100px;
-  background-color: black;
-  position: absolute;
-  top:150px;
-  left:800px;
-}
-.flash1{
-  padding:100px;
-  background-color: coral;
-}
-.flash2{
-  padding:100px;
-  background-color: blue;
-}
-.flash3{
-  padding:100px;
-  background-color: blueviolet;
-}
-.flash4{
-  padding:100px;
-  background-color: red;
-}
-.flash5{
-  padding:100px;
-  background-color: yellowgreen;
-}
-.sos {
-background-color: red;
-animation: rotating 4s infinite;
-width: 5%;
-padding: 75px;
-text-align: center;
-border-radius: 100%;
-position: absolute;
-left:60%;
-top:60%;
-}
-
-
-.titre {
+  margin: -23px -10px 0px -10px;
   background-color: white;
-  text-align: center;
-  padding: 50px;
-  margin: 0% 40%;
-  border-radius: 90px;
-  background-color: lightyellow;
-
-  /*  ROTATION INFINIE
-   animation: rotating 10s linear infinite; 
-  animation: apparence 2s linear infinite; */
- /* animation: move-titre 2s linear; */
+  justify-content: space-between;
+  
+}
+.titre {
+  text-align: left;
+  padding: 25px;
 }
 
 .first-bloc {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   height: 500px;
   width: 200px;
@@ -76,7 +24,6 @@ top:60%;
   position: absolute;
   padding: 70px;
   border-radius: 90px;
-  animation: moveufirstbloc 2s linear;
 }
 
 .second-bloc {
@@ -87,8 +34,8 @@ top:60%;
 }
 
 .img-sommaire {
-  position:absolute;
-  left : 45px;
+  position: absolute;
+  left: 45px;
   width: 250px;
   animation: apparence 20s;
 }
@@ -142,11 +89,23 @@ td {
 .p-array {
   margin: 10px;
 }
-a {
-  margin: 5px;
+.connect,
+.regist {
   font-weight: bold;
   color: black;
   transition: all 2s;
+}
+
+.connect {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.regist {
+  right: 20px;
+  top: 40px;
+  position: absolute;
 }
 
 a:hover {
@@ -155,7 +114,6 @@ a:hover {
 .list-game {
   display: flex;
   flex-direction: row;
-  
 }
 input {
   width: 96%;
@@ -164,31 +122,11 @@ input {
 button {
   margin: 5px 0px;
 }
-.search-button, .reset-button {
-  
+.search-button,
+.reset-button {
   width: 100%;
-  
 }
 /* approfondir les Keyframes pour les animations css */
-
-@-webkit-keyframes rotating {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes flashlight {
-  0% {
-background-color:yellow;
-opacity: 0;
-  }
-  100% {
-background-color:green;
-opacity:1
-  }
-}
 
 @-webkit-keyframes apparence {
   0% {
@@ -213,15 +151,13 @@ opacity:1
   0% {
     font-size: 10px;
     border-radius: 50%;
-    
   }
   100% {
     padding: 50px;
-  margin: 0% 40%;
-  border-radius: 90px;
+    margin: 0% 40%;
+    border-radius: 90px;
   }
 }
-
 
 @-webkit-keyframes moveufirstbloc {
   0% {
@@ -231,3 +167,78 @@ opacity:1
   100% {
   }
 }
+
+/* Barre de navigation du user */
+.user{
+  /*position:absolute; */
+  right: 60px;
+  top:30px;
+}
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top:0px;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+nav a{
+    display:block;
+    text-decoration: none;
+    color:black;
+    border-bottom: 2px solid transparent;
+    padding:10px 0px;
+}
+
+nav a:hover{
+    color:orange;
+    border-bottom: 2px solid gold;
+}
+
+.sous{
+    display:none;
+    box-shadow:0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: block;
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sous a{
+    padding:10px;
+    border-bottom:none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+.deroulant > a::after{
+    content:"▼";
+    font-size: 12px;
+}
+/* fin de barre de nav du user */

@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet Zelda</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="stylesheet.css" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenue</title>
-</head>
+  <body>
+    <header class="banner">
+      <h1 class="titre">L'histoire de la licence Zelda</h1>
 
-<body>
+      <nav>
+        <ul>
+          <li class="deroulant">
+            <a href="#">Sommaire</a>
+            <ul class="sous">
+              <li><a href="#">Inscription</a></li>
+              <li><a href="#">Connexion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <h1 class="titre">L'histoire de la licence Zelda</h1>
+    <div class="first-bloc">
+      <h2>Sommaire</h2>
+      <div class="listGame">
+        <input placeholder="Quel Zelda ?" type="text" />
+        <button class="search-button">Rechercher</button>
+        <button class="reset-button">Effacer</button>
+      </div>
 
-
-  <div class="first-bloc">
-    <h2>Sommaire</h2>
-    <div class="listGame">
-
-      <input placeholder="Quel Zelda ?" type="text">
-      <button class="search-button">Rechercher</button>
-      <button class="reset-button">Effacer</button>
-
+      <a
+        href="https://www.google.com/search?q=Triforce&source=lmns&hl=fr&sa=X&ved=2ahUKEwi1waTe8vn9AhVHpicCHWhoBmgQ_AUoAHoECAEQAA"
+        alt="Ocarina of time"
+        ><img
+          class="img-sommaire"
+          src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQLqbVH4rjLXBupnqmuZId3kqy9433zFqpUoFI8_wvac23yB-CyCy8iTjSGzCyPsr6Fr8kFklMSadZlD9QYpQ44r6snfVo3gEK039-1k-B8h-_YPifDg4I2&usqp=CAE"
+          alt="Triforce"
+      /></a>
     </div>
-    
-    <div class="user">
-      <a href="http://localhost:3000/register">S'inscrire</a>
-      <a href="http://localhost:3000/profil">Se connecter</a>
+
+    <div class="array">
+      <table class="target-array"></table>
     </div>
-    <a href="https://www.google.com/search?q=Triforce&source=lmns&hl=fr&sa=X&ved=2ahUKEwi1waTe8vn9AhVHpicCHWhoBmgQ_AUoAHoECAEQAA"
-      alt="Ocarina of time"><img class="img-sommaire"
-        src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQLqbVH4rjLXBupnqmuZId3kqy9433zFqpUoFI8_wvac23yB-CyCy8iTjSGzCyPsr6Fr8kFklMSadZlD9QYpQ44r6snfVo3gEK039-1k-B8h-_YPifDg4I2&usqp=CAE"
-        alt="Triforce"></a>
-  </div>
-  
-  <div class="array">
-    <table class="target-array">
-    </table>
-
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
