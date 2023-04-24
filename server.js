@@ -1,17 +1,18 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const ejs = require('ejs');
 
-// Définir le dossier public comme dossier racine de l'application
-app.use(express.static("public"))
-// Définir la route de la page d'accueil
-  .get("/", (req, res) => {res.sendFile(__dirname + "/public/index.html");})
-// Définir la route de la page de profil
-  .get("/profil", (req, res) => {res.sendFile(__dirname + "/public/profil.html");})
-// Définir la route de la page de d'inscription
-  .get("/register", (req, res) => {res.sendFile(__dirname + "/public/register.html");})
-// lien 404
-  .use((req, res, next) => {res.status(404).sendFile(__dirname + "/public/404.html");})
+//dossier public comme répertoire static
+app.use(express.static(__dirname + '/public'))
+            //EJS
+    .set('views', './views')
+    .set('view engine', 'ejs')
+    .get('/', (req,res) => {res.render('index')})
+    .get('/profil', (req,res) => {res.render('profil')})
+    .get('/register', (req,res) => {res.render('register')})
+    .use((req, res, next) => {res.status(404).render('404')})
+
 // Démarrer le serveur
   .listen(PORT, () => {console.log(`Je tourne sur l'adresse: http://localhost:${PORT}`);});
 
