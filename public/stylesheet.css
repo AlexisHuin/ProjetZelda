@@ -6,7 +6,7 @@ body {
 
 @font-face {
   font-family: "zelda";
-  src: url("./img/The\ Wild\ Breath\ of\ Zelda.otf") format("truetype");
+  src: url("./font/Zelda.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
