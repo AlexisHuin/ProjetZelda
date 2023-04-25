@@ -1,42 +1,40 @@
 body {
-  background-color: grey;
+  background-image: url(./img/pxfuel.jpg);
+  margin: 0;
+  font-family: "zelda", "sans-serif";
 }
 
+@font-face {
+  font-family: "zelda";
+  src: url("./img/The\ Wild\ Breath\ of\ Zelda.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 .banner {
   display: flex;
-  margin: -23px -10px 0px -10px;
-  background-color: white;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(7, 53, 19, 0.926);
   justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 2px solid white;
 }
 .titre {
-  text-align: left;
-  padding: 25px;
+  font-size: 40px;
+  font-weight: lighter;
+  color: rgb(187, 184, 7);
+  margin-left: 11px;
+  height: 40%;
+  border: 2px solid rgb(251, 251, 251);
+  padding: 10px;
 }
-
-.first-bloc {
-  display: flex;
-  flex-direction: column;
+h2 {
   text-align: center;
-  height: 500px;
-  width: 200px;
-  background-color: white;
-  position: absolute;
-  padding: 70px;
+  font-size: 80px;
+  
+  color: rgb(187, 184, 7);
 }
 
-.second-bloc {
-  text-align: center;
-  position: absolute;
-  left: 900px;
-  top: 100px;
-}
-
-.img-sommaire {
-  position: absolute;
-  left: 45px;
-  width: 250px;
-  animation: apparence 20s;
-}
 .img {
   margin: 5%;
   width: 40%;
@@ -109,9 +107,10 @@ td {
 a:hover {
   color: blue;
 }
-.list-game {
-  display: flex;
-  flex-direction: row;
+.listGame {
+  color: rgb(187, 184, 7);
+  width: 15%;
+  padding-top: 9px;
 }
 input {
   width: 96%;
@@ -141,9 +140,18 @@ button {
   right: 60px;
   top: 30px;
 }
+
+.color-sommaire {
+  color: rgb(187, 184, 7);
+  border: 2px solid white;
+  padding: 5px;
+
+  font-size: 40px;
+}
 nav {
+  color: white;
   width: 100%;
-  margin: 0 auto;
+  margin-right: 57px;
   background-color: white;
   position: sticky;
   top: 0px;
@@ -153,15 +161,16 @@ nav ul {
 }
 nav ul li {
   float: left;
-  width: 25%;
-  text-align: center;
+  width: 50%;
+  text-align: left;
   position: relative;
+  margin-right: 30px;
+  padding-right: 20px;
 }
 
 nav ul::after {
   content: "";
   display: table;
-  clear: both;
 }
 
 nav a {
@@ -191,7 +200,7 @@ nav > ul li:hover .sous {
 
 .sous li {
   float: none;
-  width: 100%;
+  width: 70%;
   text-align: left;
 }
 
