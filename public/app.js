@@ -1,8 +1,5 @@
 require("dotenv").config();
-const { requestDB } = require('../databasepg')
-const { Client } = require("pg");
-// je définie le MDP grace a .env
-const PG_PASSWORD = process.env.PG_PASSWORD;
+
 
 
 // const jeuxZelda = [
@@ -220,13 +217,7 @@ const PG_PASSWORD = process.env.PG_PASSWORD;
 
 // je définie la connexion a la BDD
 
-const db = new Client({
-  host: "localhost",
-  user: "postgres",
-  port: 5432,
-  password: PG_PASSWORD,
-  database: "jeux_zelda",
-});
+
 
  async function search() {
   const startButton = document.querySelector(".search-button");
@@ -234,35 +225,34 @@ const db = new Client({
     let buttonValue = document.querySelector("input");
     let searchValue = buttonValue.value;
     const table = document.querySelector(".target-array");
-    requestDB("SELECT * FROM jeux_zelda");
-    console.log(request);
+    
 
     while (table.rows.length > 0) {
       table.deleteRow(0);
     }
-    for (let i = 0; i < request.length; i++) {
+    for (let i = 0; i < articles.length; i++) {
       if (
-        request[i].titre.toLowerCase().includes(searchValue.toLowerCase())
+        articles[i].titre.toLowerCase().includes(searchValue.toLowerCase())
       ) {
         const row = table.insertRow(-1);
 
         const cellTitre = row.insertCell(0);
-        cellTitre.innerHTML = request[i].titre;
+        cellTitre.innerHTML = articles[i].titre;
 
         const cellAnnee = row.insertCell(1);
-        cellAnnee.innerHTML = request[i].annee;
+        cellAnnee.innerHTML = articles[i].annee;
 
         const cellConsole = row.insertCell(2);
-        cellConsole.innerHTML = request[i].console;
+        cellConsole.innerHTML = articles[i].console;
 
         const cellDesc = row.insertCell(3);
         cellDesc.id = "cell-desc";
-        cellDesc.innerHTML = request[i].extrait;
+        cellDesc.innerHTML = articles[i].extrait;
 
         const cellImg = row.insertCell(4);
         const img = document.createElement("img");
         img.className = "img-article";
-        img.src = request[i].photo;
+        img.src = articles[i].photo;
         cellImg.appendChild(img);
       }
     }
