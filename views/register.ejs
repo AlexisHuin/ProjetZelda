@@ -1,5 +1,7 @@
 <%- include('partials/header'); -%>
 <h2>Inscription</h2>
+<div class="bloc-inscription">
+<div class="inscription-div">
 <form action="traitement.php" method="post">
   <label class="form"  for="nom">Pseudo :</label>
   <input  type="text" id="nom" name="nom" required />
@@ -14,9 +16,12 @@
     name="motdepasse"
     required
   />
-
-
- <input id="valid-form" type="submit" value="Envoyer" />
+<input id="valid-form" type="submit" value="Envoyer" />
 </form>
+</div>
 
+<div class="inscription-div-connexion">
+  <a href="http://localhost:3000/connect" class="inscription-lien-connexion">DEja inscrit?</a>
+</div>
+</div>
 <%- include('partials/footer'); -%>

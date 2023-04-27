@@ -4,8 +4,10 @@
 
 
 <h2>Connexion</h2>
+<div class="bloc-inscription">
+  <div class="inscription-div">
 <form action="traitement.php" method="post">
-  <label class="form"  for="nom">Pseudo :</label>
+  <label class="form"  for="nom">Email :</label>
   <input  type="text" id="nom" name="nom" required />
 
   <label class="form" for="motdepasse">Mot de passe :</label>
@@ -19,7 +21,13 @@
 
  <input id="valid-form" type="submit" value="Envoyer" />
 </form>
+  </div>
 
+
+<div class="inscription-div-connexion">
+  <a href="http://localhost:3000/register" class="inscription-lien-connexion">Pas encore inscrit?</a>
+</div>
+</div>
 <%- include('partials/footer'); -%>
 
 
