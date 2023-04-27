@@ -5,6 +5,11 @@ body {
  
 }
 
+.pagination {
+  position: absolute;
+  display: contents;
+  }
+  
 .index-img {
   width: 10%;
   position: absolute;
@@ -112,12 +117,6 @@ font-size: 25px;
   color: rgb(19, 19, 202);
   opacity: 0.5;
 }
-.target-array {
-  position: absolute;
-    left: -33px;
-    top: 104px;
-    display: flex;
-}
 
 
 
@@ -137,12 +136,25 @@ td {
 }
 .array {
   position: absolute;
-  left: 30px;
-  top: 20px;
+   left: 620px;
+  top: 125px; 
+  
+  
 }
+ .pagination-button {
+  padding:10px;
+ }
 .p-array {
   margin: 10px;
 }
+
+.target-array {
+  position: absolute;
+    left: -100px;
+    top: 60px;
+    display: flex;
+}
+
 .connect,
 .regist {
   font-weight: bold;

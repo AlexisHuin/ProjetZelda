@@ -170,78 +170,93 @@ const jeuxZelda = [
     description:
       "Le dernier Zelda, beaucoup de mystEres autour de cet Episode, qui va mEler exploration et construction d'arme et de vEhicules !",
 
-    photo: "https://media.auchan.fr/A0220230220000184480PRIMARY_1200x1200/B2CD/",
-  }
+    photo:
+      "https://media.auchan.fr/A0220230220000184480PRIMARY_1200x1200/B2CD/",
+  },
 ];
 
-// function setArray() {
-//   let startButton = document.querySelector(".launch-array");
-//   startButton.addEventListener("click", (e) => {
-//     let table = document.querySelector(".target-array");
-//     if (table.rows.length > 0) {
-//       while (table.rows.length > 0) {
-//         table.deleteRow(0);
-//       }
-//     } else {
-//       for (let i = 0; i < jeuxZelda.length; i++) {
-//         const row = table.insertRow(-1);
-
-//         const cellTitre = row.insertCell(0);
-//         cellTitre.innerHTML = jeuxZelda[i].titre;
-
-//         const cellAnnee = row.insertCell(1);
-//         cellAnnee.innerHTML = jeuxZelda[i].annee;
-
-//         const cellConsole = row.insertCell(2);
-//         cellConsole.innerHTML = jeuxZelda[i].console;
-
-//         const cellDesc = row.insertCell(3);
-//         cellDesc.id = "cell-desc";
-//         cellDesc.innerHTML = jeuxZelda[i].description;
-
-//         const cellImg = row.insertCell(4);
-//         const img = document.createElement("img");
-//         img.className = "img-article";
-//         img.src = jeuxZelda[i].photo;
-//         cellImg.appendChild(img);
-//       }
-//     }
-//   });
-// }
-// setArray();
-
 function search() {
-  const startButton = document.querySelector(".search-button");
-  startButton.addEventListener("click", () => {
-    let buttonValue = document.querySelector("input");
-    let searchValue = buttonValue.value;
-    const table = document.querySelector(".target-array");
+  const button = document.querySelector(".search-button");
+  const table = document.querySelector(".target-array");
+  const nav = document.querySelector(".pagination");
+  let currentPage = 1;
+  let totalPages = 1;
+  let itemsPerPage = 2;
+  let startIndex = 0;
+  let endIndex = itemsPerPage - 1;
 
-    while (table.rows.length > 0) {
-      table.deleteRow(0);
-    }
-    for (let i = 0; i < jeuxZelda.length; i++) {
-      if (
-        jeuxZelda[i].titre.toLowerCase().includes(searchValue.toLowerCase())
-      ) {
+  function renderPage(page) {
+    table.innerHTML = "";
+    for (let i = startIndex; i <= endIndex; i++) {
+      if (jeuxZelda[i]) {
         const row = table.insertRow(-1);
-
         const cellTitre = row.insertCell(0);
         cellTitre.innerHTML = jeuxZelda[i].titre;
-
         const cellAnnee = row.insertCell(1);
         cellAnnee.innerHTML = jeuxZelda[i].annee;
-
         const cellDesc = row.insertCell(2);
         cellDesc.id = "cell-desc";
         cellDesc.innerHTML = jeuxZelda[i].description;
-
         const cellImg = row.insertCell(3);
         const img = document.createElement("img");
         img.className = "img-article";
         img.src = jeuxZelda[i].photo;
         cellImg.appendChild(img);
       }
+    }
+    nav.innerHTML = "";
+    if (totalPages > 1) {
+      const previousButton = document.createElement("button");
+      previousButton.className = "pagination-button";
+      previousButton.textContent = "Page précédente";
+      previousButton.addEventListener("click", () => {
+        currentPage--;
+        startIndex -= itemsPerPage;
+        endIndex -= itemsPerPage;
+        renderPage(currentPage);
+      });
+      nav.appendChild(previousButton);
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumber = document.createElement("button");
+        pageNumber.className = "pagination-button";
+        pageNumber.textContent = i;
+        if (i === currentPage) {
+          pageNumber.classList.add("active");
+        }
+        pageNumber.addEventListener("click", () => {
+          currentPage = i;
+          startIndex = (i - 1) * itemsPerPage;
+          endIndex = startIndex + itemsPerPage - 1;
+          renderPage(currentPage);
+        });
+        nav.appendChild(pageNumber);
+      }
+      const nextButton = document.createElement("button");
+      nextButton.className = "pagination-button";
+      nextButton.textContent = "Page suivante";
+      nextButton.addEventListener("click", () => {
+        currentPage++;
+        startIndex += itemsPerPage;
+        endIndex += itemsPerPage;
+        renderPage(currentPage);
+      });
+      nav.appendChild(nextButton);
+    }
+  }
+
+  button.addEventListener("click", () => {
+    const searchInput = document.querySelector("input").value.toLowerCase();
+    const filteredResults = jeuxZelda.filter((jeu) =>
+      jeu.titre.toLowerCase().includes(searchInput)
+    );
+    if (filteredResults.length > 0) {
+      startIndex = 0;
+      endIndex = itemsPerPage - 1;
+      totalPages = Math.ceil(filteredResults.length / itemsPerPage);
+      renderPage(currentPage);
+    } else {
+      table.innerHTML = "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
+      nav.innerHTML = "";
     }
   });
 }
@@ -259,8 +274,3 @@ search();
   });
   /* ma fonction s'auto excecute avec le () */
 })();
-
-document.addEventListener("mousemove", function(e) {
-  document.documentElement.style.setProperty('--x', e.clientX + "px");
-  document.documentElement.style.setProperty('--y', e.clientY + "px");
-});
