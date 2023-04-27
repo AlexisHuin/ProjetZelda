@@ -5,28 +5,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projet Zelda</title>
+    <title><%= title %></title>
   </head>
 
   <body>
-    <header class="banner">
+    <header class="banner-header">
       <a href="http://localhost:3000/"><h1 class="titre">L'histoire de la licence Zelda</h1></a>
       
 
-      <div class="listGame">
+      <div class="banner-listGame">
         <input class="search-game" placeholder="Quel Zelda ?" type="text" />
         <button class="search-button">Rechercher</button>
         <button class="reset-button">Effacer</button>
       </div>
-      <div class="sommaire">
+      <div class="banner-sommaire">
         <nav>
           <ul>
             <li class="deroulant">
-              <a class="color-sommaire" href="http://localhost:3000/">Menu</a>
+              <a class="color-banner-sommaire" href="http://localhost:3000/">Menu</a>
               <ul class="sous">
                 <li>
                   <a href="http://localhost:3000/register">Inscription</a>
                 </li>
+                <li><a href="http://localhost:3000/connect">Connexion</a></li>
                 <li><a href="http://localhost:3000/profil">Profil</a></li>
               </ul>
             </li>

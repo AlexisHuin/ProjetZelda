@@ -8,9 +8,10 @@ app.use(express.static(__dirname + '/public'))
             //EJS
     .set('views', './views')
     .set('view engine', 'ejs')
-    .get('/', (req,res) => {res.render('index')})
-    .get('/profil', (req,res) => {res.render('profil')})
-    .get('/register', (req,res) => {res.render('register')})
+    .get('/', (req,res) => {res.render('index', { title : 'Accueil'})})
+    .get('/profil', (req,res) => {res.render('profil', { title : ' Profil'})})
+    .get('/register', (req,res) => {res.render('register', { title : ' Inscription'})})
+    .get('/connect', (req,res) => {res.render('connect', { title : 'Connexion'})})
     .use((req, res) => {res.status(404).render('404')})
 
 // Démarrer le serveur
