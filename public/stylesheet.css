@@ -10,6 +10,10 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 .banner {
   display: flex;
   margin: 0;
@@ -31,7 +35,7 @@ body {
 h2 {
   text-align: center;
   font-size: 80px;
-  
+  margin-bottom: 25px;
   color: rgb(187, 184, 7);
 }
 
@@ -56,16 +60,16 @@ h2 {
   opacity: 0.5;
 }
 .target-array {
-  display: flex;
   position: absolute;
   left: 500px;
   top: 300px;
+  display: flex;
+
 }
 
 tr {
   padding: 20px;
-
-  flex-grow: 3;
+flex-wrap: wrap;
 }
 
 #cell-desc {
@@ -111,6 +115,7 @@ a:hover {
   color: rgb(187, 184, 7);
   width: 15%;
   padding-top: 9px;
+  margin: auto;
 }
 input {
   width: 96%;
@@ -141,6 +146,9 @@ button {
   top: 30px;
 }
 
+.sommaire {
+  margin: auto;
+}
 .color-sommaire {
   color: rgb(187, 184, 7);
   border: 2px solid white;
@@ -218,3 +226,30 @@ nav > ul li:hover .sous {
   font-size: 12px;
 }
 /* fin de barre de nav du user */
+form {
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  font-size: 40px;
+  color: rgb(187, 184, 7);
+}
+
+#valid-form,
+#nom,
+#email,
+#motdepasse {
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+}
+
+#valid-form {
+  margin-top: 15px;
+  width: 56%;
+}

@@ -1,6 +1,23 @@
 <%- include('partials/header'); -%>
-    <h1>Page d'inscription</h1>
-    
-    <a class="footer-link" href="http://localhost:3000/">Retour page d'accueil</a>
-  </body>
+<h2>Page d'inscription</h2>
+<form action="traitement.php" method="post">
+  <label class="form"  for="nom">Pseudo :</label>
+  <input  type="text" id="nom" name="nom" required />
+
+  <label class="form" for="email">Email :</label>
+  <input type="email" id="email" name="email" required />
+
+  <label class="form" for="motdepasse">Mot de passe :</label>
+  <input
+    type="password"
+    id="motdepasse"
+    name="motdepasse"
+    required
+  />
+
+
+ <input id="valid-form" type="submit" value="Envoyer" />
+</form>
+
+</body>
 </html>
