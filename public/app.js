@@ -267,10 +267,14 @@ search();
   const resetButton = document.querySelector(".reset-button");
   resetButton.addEventListener("click", () => {
     let table = document.querySelector(".target-array");
-
+    let deleteButton = document.querySelectorAll(".pagination-button");
+    
     while (table.rows.length > 0) {
       table.deleteRow(0);
-    }
+      }
+      deleteButton.forEach(button => {
+        button.remove();
+      })
   });
   /* ma fonction s'auto excecute avec le () */
 })();

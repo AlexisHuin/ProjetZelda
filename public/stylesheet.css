@@ -127,6 +127,7 @@ flex-wrap: wrap;
 
 #cell-desc {
   padding: 20px 80px;
+  margin:0px 300px;
 }
 
 td {
@@ -136,7 +137,7 @@ td {
 }
 .array {
   position: absolute;
-   left: 620px;
+   left: 32%;
   top: 125px; 
   
   
