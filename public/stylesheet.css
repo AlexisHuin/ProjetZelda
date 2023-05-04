@@ -381,3 +381,47 @@ footer {
   border-radius: 45px;
   padding: 10px;
 }
+
+/* responsive  */
+@media (max-width: 768px) {
+  /* CSS pour téléphone tablette */
+  body {
+    font-size: 14px;
+    line-height: 1.2;
+    background-size: 500px 600px; 
+  }
+  .banner-header {
+   
+    }
+
+    .banner-link {
+
+    }
+    .banner-listGame {
+      padding-top: 0;
+      margin-left: 0;
+    }
+    .banner-sommaire{
+      margin-left:0;
+    }
+  .titre{
+    font-size: 17px;
+    padding: 1.2em;
+
+  }
+  h2{
+    font-size: 2em;
+    text-align: center;
+  }
+  .bloc1,.bloc2,.bloc3 {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* styles pour les tablettes */
+}
+
+@media (min-width: 1025px) {
+  /* styles pour les écrans haute résolution */
+}
