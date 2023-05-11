@@ -1,5 +1,6 @@
 body {
-  background-image: url(./img/pxfuel.jpg);
+  padding: 0;
+  background: url(./img/pxfuel.jpg) no-repeat;
   margin: 0;
   font-family: "zelda", "sans-serif";
 }
@@ -36,29 +37,42 @@ body {
 .bloc1,
 .bloc2,
 .bloc3 {
-  padding: 50px;
+  padding: 1em;
+  font-size:1.7rem;
 }
 .bloc1 {
   flex-grow: 1;
   /* color: rgb(32, 160, 9); */
-  background:-webkit-linear-gradient(top, rgb(2, 255, 57) 30%, rgb(247, 0, 0) 75%);
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
+  background: -webkit-linear-gradient(
+    top,
+    rgb(2, 255, 57) 30%,
+    rgb(247, 0, 0) 75%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .bloc2 {
   flex-grow: 1;
-  background:-webkit-linear-gradient(top,  rgb(247, 0, 0) 30%, rgb(41, 0, 247) 75%);
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
+  background: -webkit-linear-gradient(
+    top,
+    rgb(247, 0, 0) 30%,
+    rgb(41, 0, 247) 75%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .bloc3 {
   flex-grow: 1;
-  background:-webkit-linear-gradient(top, rgb(19, 2, 255) 30%, rgb(3, 255, 7) 75%);
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
+  background: -webkit-linear-gradient(
+    top,
+    rgb(19, 2, 255) 30%,
+    rgb(3, 255, 7) 75%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 a {
   color: inherit;
@@ -69,10 +83,10 @@ a {
   font-size: 40px;
   font-weight: lighter;
   color: rgb(187, 184, 7);
-  margin-left: 11px;
-  height: 40%;
+  margin-left: 1em;
+  height: 38%;
   border: 2px solid rgb(251, 251, 251);
-  padding: 10px;
+  padding: 0.5em;
 }
 h2 {
   text-align: center;
@@ -91,12 +105,10 @@ tbody {
 }
 .img-article {
   width: 200px;
-
 }
 .img-profil {
   width: 40%;
   margin-top: 20px;
-
 }
 
 .p-profil {
@@ -109,7 +121,6 @@ tbody {
   width: 50%;
   border: 1px solid white;
   border-radius: 20px;
-  
 }
 
 .contain-profil {
@@ -197,7 +208,8 @@ button {
   margin: 5px 0px;
 }
 .search-button,
-.reset-button, .search-game {
+.reset-button,
+.search-game {
   width: 100%;
   padding: 10px;
 }
@@ -232,23 +244,26 @@ button {
 }
 .banner-sommaire {
   margin: auto;
-  margin-left: 500px;
+  margin-left: 1em;
 }
-.banner-link,.banner-listGame,.banner-sommaire{
+.banner-link,
+.banner-listGame,
+.banner-sommaire {
   flex-grow: 1;
 }
 .banner-listGame {
   color: rgb(187, 184, 7);
-  width: 15%;
-  padding-top: 9px;
-  margin-left: 400px;
+  width: 9%;
+  padding-top: 1em;
+  margin-left: 3em;
 }
 .color-banner-sommaire {
-  color: rgb(187, 184, 7);
-  border: 2px solid white;
-  padding: 5px;
+  
+    color: rgb(187, 184, 7);
+    border: 2px solid white;
+    padding: 13px;
+    font-size: 40px;
 
-  font-size: 40px;
 }
 
 nav {
@@ -388,33 +403,45 @@ footer {
   body {
     font-size: 14px;
     line-height: 1.2;
-    background-size: 500px 600px; 
+    background-size: 500px 600px;
   }
   .banner-header {
-   
-    }
-
-    .banner-link {
-
-    }
-    .banner-listGame {
-      padding-top: 0;
-      margin-left: 0;
-    }
-    .banner-sommaire{
-      margin-left:0;
-    }
-  .titre{
-    font-size: 17px;
-    padding: 1.2em;
-
   }
-  h2{
+  .search-button,
+  .reset-button,
+  .search-game {
+    width: 100%;
+    padding: 1px;
+  }
+  .banner-link {
+    margin-right: 1em;
+  }
+  .banner-listGame {
+    margin-top: 2em;
+    padding-top: 0;
+    margin-left: 0;
+    font-size: 0.5rem;
+  }
+  .banner-sommaire {
+    margin: 0;
+    margin-right: -3em;
+  }
+  .titre {
+    font-size: 2em;
+    padding: 0.4em;
+  }
+  h2 {
     font-size: 2em;
     text-align: center;
   }
-  .bloc1,.bloc2,.bloc3 {
+  .bloc1,
+  .bloc2,
+  .bloc3 {
     display: none;
+  }
+  #footer {
+    font-size: 0.6em;
+    width: 80%;
   }
 }
 
